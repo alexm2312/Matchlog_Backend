@@ -7,7 +7,7 @@ import java.util.List;
 @RestController
 public class MatchlogControllerApi {
     
-    @GetMapping
+    @GetMapping("/api/matches")
     public List<EntityClass> getHelloWorld() {
         List<EntityClass> matches = new ArrayList<>();
         matches.add(new EntityClass("Union Berlin gegen Bayern", "Alte Försterei", 25.00));
