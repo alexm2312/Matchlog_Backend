@@ -1,19 +1,25 @@
 package de.htw.berlin.Matchlog;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import java.util.ArrayList;
+
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
 public class MatchlogControllerApi {
 
+    private final MatchlogRepository repository;
+
+    public MatchlogControllerApi(MatchlogRepository repository) {
+        this.repository = repository;
+    }
+
     @GetMapping("/api/matches")
-    public List<EntityClass> getHelloWorld() {
-        List<EntityClass> matches = new ArrayList<>();
-        matches.add(new EntityClass("Union Berlin gegen Bayern", "Alte Försterei", 25.00));
-        matches.add(new EntityClass("Kaiserslautern gegen Karlsruhe", "Fritz Walter Stadion", 30.00));
-        return matches;
+    public List<EntityClass> getMatches() {
+        return repository.findAll();
+    }
+
+    @PostMapping("/api/matches")
+    public EntityClass createMatch(@RequestBody EntityClass match) {
+        return repository.save(match);
     }
 }
