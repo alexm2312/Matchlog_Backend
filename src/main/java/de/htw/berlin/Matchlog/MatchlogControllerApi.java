@@ -1,12 +1,14 @@
 package de.htw.berlin.Matchlog;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class MatchlogControllerApi {
-    
+
     @GetMapping("/api/matches")
     public List<EntityClass> getHelloWorld() {
         List<EntityClass> matches = new ArrayList<>();
