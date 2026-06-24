@@ -15,13 +15,17 @@ public class EntityClass {
     private String title;
     private String location;
     private double ticketprice;
+    private String visibility;
+    private String owner;
 
     public EntityClass() {}
 
-    public EntityClass(String title, String location, double ticketprice) {
-        this.title = title;
-        this.location = location;
-        this.ticketprice = ticketprice;
+    public EntityClass(String title, String location, double ticketprice, String visibility, String owner) {
+    this.title = title;
+    this.location = location;
+    this.ticketprice = ticketprice;
+    this.visibility = visibility;
+    this.owner = owner;
     }
 
     public Long getId() { return id; }
@@ -39,4 +43,16 @@ public class EntityClass {
         this.ticketprice = ticketprice;
     }
     
+    public String getVisibility() {
+        return visibility;
+    }
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;           
+    }
+    public String getOwner() {
+        return owner;
+    }
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }   
 }
