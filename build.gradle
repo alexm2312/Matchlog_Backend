@@ -22,8 +22,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring kann mit Datenbanken arbeiten
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// PostgresSQL Treiber
     runtimeOnly 'org.postgresql:postgresql'
+
+
     testRuntimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
