@@ -1,0 +1,22 @@
+{
+  "homeTeam": "Hertha BSC",
+  "awayTeam": "Schalke 04",
+  "stadium": "Olympiastadion",
+  "city": "Berlin",
+  "country": "Deutschland",
+  "date": "2026-03-14",
+  "score": "2:1",
+  "attendance": 48211,
+  "weather": "Bewoelkt, 9C",
+  "ratings": {
+    "atmosphere": 4,
+    "ambience": 4,
+    "food": 3,
+    "travel": 5,
+    "fanculture": 4,
+    "security": 4
+  },
+  "note": "Testeintrag",
+  "visibility": "PUBLIC",
+  "userId": "test-user-1"
+}
