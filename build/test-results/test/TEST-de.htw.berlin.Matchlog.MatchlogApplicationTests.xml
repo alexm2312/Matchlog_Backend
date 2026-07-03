@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="de.htw.berlin.Matchlog.MatchlogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-22T16:53:34.142Z" hostname="MacBook-Air-von-Alexander-2.fritz.box" time="1.25">
+<testsuite name="de.htw.berlin.Matchlog.MatchlogApplicationTests" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-07-03T15:22:28.042Z" hostname="LEANDRO-PC" time="6.723">
   <properties/>
-  <testcase name="contextLoads()" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.253"/>
-  <system-out><![CDATA[18:53:34.189 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.Matchlog.MatchlogApplicationTests]: MatchlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-18:53:34.224 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.Matchlog.MatchlogApplication for test class de.htw.berlin.Matchlog.MatchlogApplicationTests
-18:53:34.247 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.Matchlog.MatchlogApplicationTests]: MatchlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-18:53:34.247 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.Matchlog.MatchlogApplication for test class de.htw.berlin.Matchlog.MatchlogApplicationTests
+  <testcase name="6 - getMyVisits gibt keine Eintraege anderer Nutzer zurueck" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="1.01"/>
+  <testcase name="4 - Public-Feed zeigt nur PUBLIC-Eintraege, keine PRIVATE" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.033"/>
+  <testcase name="10 - deleteVisit von falschem Nutzer wirft 403 Forbidden" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.023"/>
+  <testcase name="7 - updateVisit aktualisiert den Eintrag korrekt" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.02"/>
+  <testcase name="8 - updateVisit von falschem Nutzer wirft 403 Forbidden" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.008"/>
+  <testcase name="5 - getMyVisits gibt alle eigenen Eintraege zurueck" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.007"/>
+  <testcase name="9 - deleteVisit entfernt den Eintrag aus der Datenbank" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.009"/>
+  <testcase name="2 - Public-Feed ist leer wenn keine Eintraege vorhanden sind" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.005"/>
+  <testcase name="1 - Spring-Context startet fehlerfrei" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.004"/>
+  <testcase name="3 - createVisit legt Eintrag an und gibt ihn mit ID zurueck" classname="de.htw.berlin.Matchlog.MatchlogApplicationTests" time="0.007"/>
+  <system-out><![CDATA[17:22:28.270 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.Matchlog.MatchlogApplicationTests]: MatchlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:22:28.456 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.Matchlog.MatchlogApplication for test class de.htw.berlin.Matchlog.MatchlogApplicationTests
+17:22:28.568 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.Matchlog.MatchlogApplicationTests]: MatchlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:22:28.570 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.Matchlog.MatchlogApplication for test class de.htw.berlin.Matchlog.MatchlogApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -16,35 +25,37 @@
 
  :: Spring Boot ::                (v4.0.5)
 
-2026-05-22T18:53:34.335+02:00  INFO 2822 --- [Matchlog] [    Test worker] d.h.b.Matchlog.MatchlogApplicationTests  : Starting MatchlogApplicationTests using Java 25.0.1 with PID 2822 (started by alexandermeier in /Users/alexandermeier/Code/Matchlog/Matchlog Backend)
-2026-05-22T18:53:34.336+02:00  INFO 2822 --- [Matchlog] [    Test worker] d.h.b.Matchlog.MatchlogApplicationTests  : No active profile set, falling back to 1 default profile: "default"
-2026-05-22T18:53:34.508+02:00  INFO 2822 --- [Matchlog] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-22T18:53:34.515+02:00  INFO 2822 --- [Matchlog] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
-2026-05-22T18:53:34.603+02:00  INFO 2822 --- [Matchlog] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-22T18:53:34.660+02:00  INFO 2822 --- [Matchlog] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:708f30d2-0909-4604-b8bf-54dd1967e09b user=SA
-2026-05-22T18:53:34.661+02:00  INFO 2822 --- [Matchlog] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-22T18:53:34.676+02:00  INFO 2822 --- [Matchlog] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-22T18:53:34.691+02:00  INFO 2822 --- [Matchlog] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
-2026-05-22T18:53:34.816+02:00  INFO 2822 --- [Matchlog] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-22T18:53:34.840+02:00  INFO 2822 --- [Matchlog] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:h2:mem:708f30d2-0909-4604-b8bf-54dd1967e09b]
+2026-07-03T17:22:29.023+02:00  INFO 20728 --- [    Test worker] d.h.b.Matchlog.MatchlogApplicationTests  : Starting MatchlogApplicationTests using Java 25.0.3 with PID 20728 (started by Leandro in C:\Wirtschaftsinformatik\Matchlog)
+2026-07-03T17:22:29.025+02:00  INFO 20728 --- [    Test worker] d.h.b.Matchlog.MatchlogApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T17:22:29.827+02:00  INFO 20728 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-03T17:22:29.889+02:00  INFO 20728 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+2026-07-03T17:22:30.360+02:00  INFO 20728 --- [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-03T17:22:30.453+02:00  INFO 20728 --- [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-07-03T17:22:31.189+02:00  INFO 20728 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-03T17:22:31.232+02:00  INFO 20728 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T17:22:31.453+02:00  INFO 20728 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-07-03T17:22:31.454+02:00  INFO 20728 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T17:22:31.482+02:00  WARN 20728 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-03T17:22:31.513+02:00  INFO 20728 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:testdb]
 	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
 	Database version: 2.4.240
-	Default catalog/schema: 708F30D2-0909-4604-B8BF-54DD1967E09B/PUBLIC
+	Default catalog/schema: TESTDB/PUBLIC
 	Autocommit mode: undefined/unknown
 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
 	JDBC fetch size: 100
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-22T18:53:34.961+02:00  INFO 2822 --- [Matchlog] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-22T18:53:34.963+02:00  INFO 2822 --- [Matchlog] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-22T18:53:34.998+02:00  WARN 2822 --- [Matchlog] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-22T18:53:35.136+02:00  INFO 2822 --- [Matchlog] [    Test worker] d.h.b.Matchlog.MatchlogApplicationTests  : Started MatchlogApplicationTests in 0.867 seconds (process running for 1.257)
+2026-07-03T17:22:32.570+02:00  INFO 20728 --- [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-03T17:22:32.617+02:00  INFO 20728 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-03T17:22:32.740+02:00  INFO 20728 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-03T17:22:33.052+02:00  WARN 20728 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-03T17:22:33.616+02:00  INFO 20728 --- [    Test worker] d.h.b.Matchlog.MatchlogApplicationTests  : Started MatchlogApplicationTests in 4.935 seconds (process running for 6.503)
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (/Users/alexandermeier/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: A Java agent has been loaded dynamically (C:\Users\Leandro\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.17.8\f09415827a71be7ed621c7bd02550678f28bc81c\byte-buddy-agent-1.17.8.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
